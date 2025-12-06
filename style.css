@@ -1,81 +1,241 @@
-/* PREMIUM FONTS */
-body {
+/* BASE */
+* {
     margin: 0;
-    font-family: 
-        -apple-system, BlinkMacSystemFont, 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont,
         "SF Pro Display", "Inter", "Segoe UI",
         Roboto, Helvetica, Arial, sans-serif;
 
-    background: radial-gradient(circle at top, #3f1d70 0%, #0a0014 60%, #000010 100%);
-    color: white;
-    overflow-x: hidden;
+    background: radial-gradient(circle at top, #3e1b73 0%, #060012 55%, #000009 100%);
+    color: #ffffff;
+    overflow: hidden;
 }
 
-/* MAIN LAYOUT */
-.container {
+.page {
     min-height: 100vh;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 0 20px;
+    justify-content: center;
+    padding: 24px;
 }
 
-/* LOGO — BIGGER + FLOAT + PREMIUM GLOW */
-.logo-wrapper {
-    margin-bottom: 40px;
-    animation: float 4s ease-in-out infinite;
+/* BACKGROUND – FUTURISTIC ORBS + PARTICLES */
+.background-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Glowing orbs */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(42px);
+    opacity: 0.55;
+    mix-blend-mode: screen;
+    animation: float-orb 22s linear infinite alternate;
+}
+
+.orb-1 {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, #ff3cff 0%, #7f1cff 40%, transparent 70%);
+    top: -80px;
+    left: -60px;
+}
+
+.orb-2 {
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, #4bd4ff 0%, #2b88ff 35%, transparent 70%);
+    bottom: -120px;
+    right: -40px;
+    animation-delay: -6s;
+}
+
+.orb-3 {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, #ffc44b 0%, #ff6b3d 40%, transparent 75%);
+    top: 30%;
+    right: 10%;
+    animation-delay: -12s;
+}
+
+/* Tiny particles */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: drift 18s linear infinite;
+    opacity: 0.75;
+}
+
+.p1 { top: 12%; left: 18%; animation-delay: 0s; }
+.p2 { top: 30%; left: 75%; animation-delay: -4s; }
+.p3 { top: 70%; left: 20%; animation-delay: -8s; }
+.p4 { top: 82%; left: 55%; animation-delay: -10s; }
+.p5 { top: 40%; left: 48%; animation-delay: -13s; }
+.p6 { top: 18%; left: 60%; animation-delay: -16s; }
+
+@keyframes drift {
+    0%   { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+    30%  { opacity: 0.9; }
+    100% { transform: translateY(-80px) translateX(40px); opacity: 0; }
+}
+
+@keyframes float-orb {
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(20px, -40px, 0); }
+}
+
+/* HERO CARD – GLASS / PREMIUM */
+.hero-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 620px;
+}
+
+.hero-card {
+    position: relative;
+    padding: 42px 40px 34px;
+    border-radius: 32px;
+    text-align: center;
+    background: rgba(8, 3, 25, 0.74);
+    box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.95),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(22px);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* subtle gradient border */
+.hero-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #ff64ff, #7f5bff, #42e9ff);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+/* LOGO AREA – FLOAT + GLOW */
+.logo-aura {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.logo-aura::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.4), transparent 70%);
+    filter: blur(24px);
+    opacity: 0.9;
+    animation: pulse-glow 5s ease-in-out infinite;
+    z-index: -1;
 }
 
 .xoner-logo {
-    width: 340px;
-    max-width: 70vw;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    filter: drop-shadow(0 0 18px rgba(200, 80, 255, 0.6));
+    width: 320px;
+    max-width: 72vw;
+    transition: filter 0.4s ease;
+    filter: drop-shadow(0 0 22px rgba(220, 90, 255, 0.8));
+    cursor: pointer;
 }
 
-/* Hover shine */
-.logo-wrapper:hover .xoner-logo {
-    transform: scale(1.06);
-    filter: drop-shadow(0 0 28px rgba(230, 90, 255, 0.8));
+.logo-aura:hover .xoner-logo {
+    filter: drop-shadow(0 0 32px rgba(255, 140, 255, 1));
 }
 
-/* Floating animation */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50%      { transform: scale(1.12); opacity: 1; }
 }
 
-/* TITLE */
+/* TYPOGRAPHY – LUXURY TECH */
 .title {
-    font-size: 42px;
-    letter-spacing: 0.18em;
+    font-size: 38px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
     font-weight: 800;
-    color: #c892ff;
+    color: #e4c3ff;
     margin-bottom: 10px;
 }
 
-/* SUBTITLE */
 .subtitle {
     font-size: 20px;
-    color: #e3d5ff;
-    margin-bottom: 35px;
+    color: #f1e8ff;
+    opacity: 0.88;
+    margin-bottom: 32px;
 }
 
-/* INSTAGRAM + EMAIL TEXT */
+/* LINKS */
 .insta,
 .email {
     display: block;
     font-size: 17px;
-    margin: 6px 0;
-    color: #c76bff;
     text-decoration: none;
-    transition: opacity 0.3s;
+    margin: 5px 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.insta {
+    color: #d192ff;
+}
+
+.email {
+    color: #ff8cff;
 }
 
 .insta:hover,
 .email:hover {
-    opacity: 0.75;
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .hero-card {
+        padding: 32px 22px 28px;
+        border-radius: 24px;
+    }
+
+    .xoner-logo {
+        width: 260px;
+    }
+
+    .title {
+        font-size: 28px;
+        letter-spacing: 0.18em;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
 }
