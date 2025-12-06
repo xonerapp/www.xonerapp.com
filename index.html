@@ -7,29 +7,17 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
     <div class="page">
 
-        <!-- Animated background orbs / particles -->
-        <div class="background-layer">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-
-            <div class="particle p1"></div>
-            <div class="particle p2"></div>
-            <div class="particle p3"></div>
-            <div class="particle p4"></div>
-            <div class="particle p5"></div>
-            <div class="particle p6"></div>
-        </div>
-
-        <!-- HERO CARD -->
+        <!-- HERO CARD (glass premium) -->
         <div class="hero-wrapper">
             <div class="hero-card" id="hero">
+
                 <div class="logo-aura">
                     <img
                         src="xoner-logo-x.png"
-                        alt="Xoner logo"
+                        alt="Xoner Logo"
                         class="xoner-logo"
                         id="logo"
                     />
@@ -38,26 +26,15 @@
                 <h1 class="title">COMING SOON</h1>
                 <p class="subtitle">Rate. Match. Connect.</p>
 
-                <a
-                    href="https://instagram.com/xonerapp"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="insta"
-                >
-                    @xonerapp
-                </a>
+                <a href="https://instagram.com/xonerapp" target="_blank" class="insta">@xonerapp</a>
+                <a href="mailto:contact@xonerapp.com" class="email">contact@xonerapp.com</a>
 
-                <a
-                    href="mailto:contact@xonerapp.com"
-                    class="email"
-                >
-                    contact@xonerapp.com
-                </a>
             </div>
         </div>
+
     </div>
 
-    <!-- Tiny parallax script for cinematic feel -->
+    <!-- Parallax script -->
     <script>
         const hero = document.getElementById("hero");
         const logo = document.getElementById("logo");
@@ -69,8 +46,7 @@
             hero.style.transform =
                 "rotateX(" + (-y / 2) + "deg) rotateY(" + (x / 2) + "deg)";
             logo.style.transform =
-                "translate(" + (x / 3) + "px," + (y / 3) +
-                "px) scale(1.04)";
+                "translate(" + (x / 3) + "px," + (y / 3) + "px) scale(1.04)";
         });
 
         window.addEventListener("mouseleave", () => {
@@ -78,5 +54,6 @@
             logo.style.transform = "translate(0,0) scale(1)";
         });
     </script>
+
 </body>
 </html>
