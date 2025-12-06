@@ -24,51 +24,20 @@ body {
     padding: 24px;
 }
 
-/* HERO CARD – GLASS / PREMIUM */
-.hero-wrapper {
-    z-index: 2;
-    width: 100%;
-    max-width: 620px;
-}
-
-.hero-card {
-    position: relative;
-    padding: 42px 40px 34px;
-    border-radius: 32px;
+/* FULL-SCREEN HERO CONTENT (NO CARD) */
+.hero-content {
     text-align: center;
-    background: rgba(8, 3, 25, 0.74);
-    box-shadow:
-        0 28px 80px rgba(0, 0, 0, 0.95),
-        0 0 0 1px rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(22px);
     transform-style: preserve-3d;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
-/* Subtle gradient border */
-.hero-card::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, #ff64ff, #7f5bff, #42e9ff);
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0.55;
-    pointer-events: none;
-}
-
-/* LOGO – FLOAT + GLOW */
+/* LOGO + GLOW */
 .logo-aura {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 .logo-aura::before {
@@ -100,7 +69,7 @@ body {
     50%      { transform: scale(1.12); opacity: 1; }
 }
 
-/* TEXT STYLES */
+/* TEXT */
 .title {
     font-size: 38px;
     letter-spacing: 0.22em;
@@ -123,8 +92,8 @@ body {
     display: block;
     font-size: 17px;
     text-decoration: none;
-    margin: 5px 0;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    margin: 6px 0;
+    transition: opacity 0.25s ease;
 }
 
 .insta {
@@ -137,17 +106,11 @@ body {
 
 .insta:hover,
 .email:hover {
-    opacity: 0.8;
-    transform: translateY(-1px);
+    opacity: 0.75;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-    .hero-card {
-        padding: 32px 22px 28px;
-        border-radius: 24px;
-    }
-
     .xoner-logo {
         width: 260px;
     }
