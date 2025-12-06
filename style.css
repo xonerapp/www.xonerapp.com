@@ -1,22 +1,76 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+    sans-serif;
+  background: radial-gradient(circle at top, #2a1750 0, #05000f 55%, #020008 100%);
+  color: #ffffff;
+}
+
+/* Layout */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 16px;
+}
+
+/* Top text */
+.headline {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.headline h1 {
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  font-size: 32px;
+  color: #b46bff;
+}
+
+.tagline {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #d4c7ff;
+}
+
+/* Centre logo + handle */
+.content {
+  text-align: center;
+}
+
+.xoner-logo {
+  width: 260px;
+  max-width: 70vw;
+  height: auto;
+  border-radius: 32px;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.handle {
+  font-size: 16px;
+  color: #b46bff;
+}
+
+/* Footer email */
+.footer {
+  margin-bottom: 12px;
+}
+
 .email {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #C9B3EF;
-    opacity: 0.85;
+  font-size: 14px;
+  color: #ff79ff;
+  text-decoration: none;
 }
 
-.email a {
-    color: #A854FF;
-    text-decoration: none;
-}
-
-.email a:hover {
-    opacity: 0.7;
-}
-
-.insta-icon {
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-    margin-right: 6px;
+.email:hover {
+  text-decoration: underline;
 }
