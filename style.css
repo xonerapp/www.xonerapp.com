@@ -1,76 +1,74 @@
 /* Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
-    sans-serif;
-  background: radial-gradient(circle at top, #2a1750 0, #05000f 55%, #020008 100%);
-  color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top, #2a1750 0, #05000f 55%, #020008 100%);
+    color: #ffffff;
 }
 
-/* Layout */
+/* Layout wrapper */
 .page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 16px;
 }
 
-/* Top text */
+/* Header text */
 .headline {
-  text-align: center;
-  margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .headline h1 {
-  letter-spacing: 0.15em;
-  font-weight: 800;
-  font-size: 32px;
-  color: #b46bff;
+    letter-spacing: 0.15em;
+    font-weight: 800;
+    font-size: 32px;
+    color: #b46bff;
 }
 
 .tagline {
-  margin-top: 12px;
-  font-size: 16px;
-  color: #d4c7ff;
+    margin-top: 12px;
+    font-size: 16px;
+    color: #d4c7ff;
 }
 
-/* Centre logo + handle */
+/* Logo + handle */
 .content {
-  text-align: center;
+    text-align: center;
 }
 
 .xoner-logo {
-  width: 260px;
-  max-width: 70vw;
-  height: auto;
-  border-radius: 32px;
-  display: block;
-  margin: 0 auto 20px auto;
+    width: 260px;   /* Adjust as needed */
+    max-width: 70vw;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
 }
 
 .handle {
-  font-size: 16px;
-  color: #b46bff;
+    font-size: 16px;
+    color: #b46bff;
 }
 
-/* Footer email */
+/* Footer */
 .footer {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .email {
-  font-size: 14px;
-  color: #ff79ff;
-  text-decoration: none;
+    font-size: 14px;
+    color: #ff79ff;
+    text-decoration: none;
 }
 
 .email:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
