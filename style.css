@@ -1,109 +1,22 @@
-/* Base layout */
-body {
-  margin: 0;
-  background: #070010;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  color: #ffffff;
-}
-
-.page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Fade-in animation for main content */
-.container {
-  text-align: center;
-  animation: fadeInUp 1.1s ease-out forwards;
-  opacity: 0;
-}
-
-/* Xoner logo: bigger + subtle glow + hover */
-.logo {
-  width: 260px;          /* enlarged logo */
-  height: auto;
-  margin-bottom: 36px;
-  filter: drop-shadow(0 0 18px rgba(168, 84, 255, 0.4));
-  transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
-}
-
-.logo:hover {
-  transform: scale(1.06);
-  filter: drop-shadow(0 0 30px rgba(168, 84, 255, 0.75));
-  cursor: pointer;
-}
-
-/* Text */
-.title {
-  font-size: 44px;
-  letter-spacing: 4px;
-  margin: 0 0 12px;
-  color: #a854ff;
-}
-
-.tagline {
-  font-size: 20px;
-  margin: 0 0 28px;
-  color: #c9b3ef;
-}
-
-/* Instagram link with icon */
-.insta-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #a854ff;
-  font-size: 18px;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.insta-link:hover {
-  opacity: 0.8;
-  transform: translateY(-1px);
-}
-
-.insta-icon svg {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: #a854ff;
-  stroke-width: 1.6;
-}
-
-/* Fade-in keyframes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .logo {
-    width: 210px;
-    margin-bottom: 28px;
-  }
-
-  .title {
-    font-size: 32px;
-    letter-spacing: 3px;
-  }
-
-  .tagline {
-    font-size: 18px;
-  }
-
-  .insta-link {
+.email {
+    margin-top: 10px;
     font-size: 16px;
-  }
+    color: #C9B3EF;
+    opacity: 0.85;
+}
+
+.email a {
+    color: #A854FF;
+    text-decoration: none;
+}
+
+.email a:hover {
+    opacity: 0.7;
+}
+
+.insta-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 6px;
 }
