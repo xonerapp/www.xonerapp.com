@@ -10,31 +10,28 @@
 
     <div class="page">
 
-        <!-- HERO CARD (glass premium) -->
-        <div class="hero-wrapper">
-            <div class="hero-card" id="hero">
+        <div class="hero-content" id="hero">
 
-                <div class="logo-aura">
-                    <img
-                        src="xoner-logo-x.png"
-                        alt="Xoner Logo"
-                        class="xoner-logo"
-                        id="logo"
-                    />
-                </div>
-
-                <h1 class="title">COMING SOON</h1>
-                <p class="subtitle">Rate. Match. Connect.</p>
-
-                <a href="https://instagram.com/xonerapp" target="_blank" class="insta">@xonerapp</a>
-                <a href="mailto:contact@xonerapp.com" class="email">contact@xonerapp.com</a>
-
+            <div class="logo-aura">
+                <img
+                    src="xoner-logo-x.png"
+                    alt="Xoner Logo"
+                    class="xoner-logo"
+                    id="logo"
+                />
             </div>
+
+            <h1 class="title">COMING SOON</h1>
+            <p class="subtitle">Rate. Match. Connect.</p>
+
+            <a href="https://instagram.com/xonerapp" target="_blank" class="insta">@xonerapp</a>
+            <a href="mailto:contact@xonerapp.com" class="email">contact@xonerapp.com</a>
+
         </div>
 
     </div>
 
-    <!-- Parallax script -->
+    <!-- Parallax Script -->
     <script>
         const hero = document.getElementById("hero");
         const logo = document.getElementById("logo");
@@ -43,15 +40,13 @@
             const x = (e.clientX / window.innerWidth - 0.5) * 16;
             const y = (e.clientY / window.innerHeight - 0.5) * 16;
 
-            hero.style.transform =
-                "rotateX(" + (-y / 2) + "deg) rotateY(" + (x / 2) + "deg)";
-            logo.style.transform =
-                "translate(" + (x / 3) + "px," + (y / 3) + "px) scale(1.04)";
+            hero.style.transform = "translateZ(0) rotateX(" + (-y / 2) + "deg) rotateY(" + (x / 2) + "deg)";
+            logo.style.transform = "translate(" + (x / 3) + "px," + (y / 3) + "px)";
         });
 
         window.addEventListener("mouseleave", () => {
             hero.style.transform = "rotateX(0deg) rotateY(0deg)";
-            logo.style.transform = "translate(0,0) scale(1)";
+            logo.style.transform = "translate(0,0)";
         });
     </script>
 
