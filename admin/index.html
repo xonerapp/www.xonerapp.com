@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Xoner Command Center</title>
+
     <style>
       :root {
         --bg: #070010;
@@ -19,7 +20,12 @@
         height: 100%;
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        background: radial-gradient(circle at top, #2a0f4d 0%, var(--bg) 55%, #000 100%);
+        background: radial-gradient(
+          circle at top,
+          #2a0f4d 0%,
+          var(--bg) 55%,
+          #000 100%
+        );
         color: var(--text);
       }
 
@@ -34,7 +40,7 @@
       .card {
         width: 100%;
         max-width: 980px;
-        background: rgba(29, 16, 48, 0.85);
+        background: rgba(29, 16, 48, 0.88);
         border: 1px solid rgba(42, 28, 64, 0.9);
         border-radius: 16px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
@@ -51,12 +57,6 @@
         margin-bottom: 18px;
       }
 
-      .title {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-
       h1 {
         font-size: 22px;
         margin: 0;
@@ -66,7 +66,7 @@
       .sub {
         color: var(--muted);
         font-size: 13px;
-        margin: 0;
+        margin: 6px 0 0 0;
       }
 
       .badge {
@@ -99,7 +99,7 @@
 
       .tile {
         border: 1px solid rgba(42, 28, 64, 0.9);
-        background: rgba(7, 0, 16, 0.35);
+        background: rgba(7, 0, 16, 0.4);
         border-radius: 14px;
         padding: 14px;
       }
@@ -107,8 +107,7 @@
       .k {
         color: var(--muted);
         font-size: 12px;
-        letter-spacing: 0.4px;
-        margin: 0 0 8px 0;
+        margin-bottom: 8px;
       }
 
       .v {
@@ -120,29 +119,18 @@
         margin-top: 16px;
         color: var(--muted);
         font-size: 13px;
-        line-height: 1.5;
         border-top: 1px dashed rgba(42, 28, 64, 0.8);
         padding-top: 14px;
       }
 
-      .accent {
-        color: #d8b6ff;
-      }
-
-      .btnrow {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 14px;
-      }
-
       .btn {
         display: inline-block;
+        margin-top: 12px;
         text-decoration: none;
         color: var(--text);
         border: 1px solid rgba(142, 45, 226, 0.7);
         background: rgba(142, 45, 226, 0.12);
-        padding: 10px 12px;
+        padding: 10px 14px;
         border-radius: 12px;
         font-size: 13px;
       }
@@ -150,58 +138,75 @@
       .btn:hover {
         background: rgba(142, 45, 226, 0.18);
       }
+
+      /* Hide dashboard until authenticated */
+      body[data-auth="false"] .wrap {
+        display: none;
+      }
     </style>
+
+    <script>
+      (function () {
+        const USERNAME = "admin";
+        const PASSWORD = "xoner2025";
+
+        const u = prompt("Xoner Admin Username:");
+        const p = prompt("Xoner Admin Password:");
+
+        if (u !== USERNAME || p !== PASSWORD) {
+          alert("Access denied.");
+          window.location.href = "/";
+        } else {
+          document.addEventListener("DOMContentLoaded", () => {
+            document.body.setAttribute("data-auth", "true");
+          });
+        }
+      })();
+    </script>
   </head>
 
-  <body>
+  <body data-auth="false">
     <div class="wrap">
       <div class="card">
         <div class="top">
-          <div class="title">
+          <div>
             <h1>Xoner Command Center</h1>
-            <p class="sub">Private dashboard (placeholder). Next: connect live data.</p>
+            <p class="sub">Private dashboard (placeholder)</p>
           </div>
-          <div class="badge">Status: <span class="accent">Draft</span></div>
+          <div class="badge">Status: Draft</div>
         </div>
 
         <div class="grid">
           <div class="tile">
-            <p class="k">App Store Downloads</p>
-            <p class="v">—</p>
+            <div class="k">App Store Downloads</div>
+            <div class="v">—</div>
           </div>
-
           <div class="tile">
-            <p class="k">Play Store Downloads</p>
-            <p class="v">—</p>
+            <div class="k">Play Store Downloads</div>
+            <div class="v">—</div>
           </div>
-
           <div class="tile">
-            <p class="k">Registered Users</p>
-            <p class="v">—</p>
+            <div class="k">Registered Users</div>
+            <div class="v">—</div>
           </div>
-
           <div class="tile">
-            <p class="k">Swipes / Hour</p>
-            <p class="v">—</p>
+            <div class="k">Swipes / Hour</div>
+            <div class="v">—</div>
           </div>
-
           <div class="tile">
-            <p class="k">Likes / Hour</p>
-            <p class="v">—</p>
+            <div class="k">Likes / Hour</div>
+            <div class="v">—</div>
           </div>
-
           <div class="tile">
-            <p class="k">Ratings / Hour</p>
-            <p class="v">—</p>
+            <div class="k">Ratings / Hour</div>
+            <div class="v">—</div>
           </div>
         </div>
 
         <div class="hint">
-          <strong class="accent">Next wiring plan:</strong>
-          We’ll feed these tiles from a small API (later) and keep this page private.
-          <div class="btnrow">
-            <a class="btn" href="/">Back to xonerapp.com</a>
-          </div>
+          Next wiring step: connect live metrics via API.
+          <br />
+          <a class="btn" href="/">Back to xonerapp.com</a>
         </div>
       </div>
     </div>
