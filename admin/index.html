@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xoner Command Center</title>
+    <style>
+      :root {
+        --bg: #070010;
+        --card: #1d1030;
+        --border: #2a1c40;
+        --accent: #8e2de2;
+        --text: #ffffff;
+        --muted: #c4bedf;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: radial-gradient(circle at top, #2a0f4d 0%, var(--bg) 55%, #000 100%);
+        color: var(--text);
+      }
+
+      .wrap {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 980px;
+        background: rgba(29, 16, 48, 0.85);
+        border: 1px solid rgba(42, 28, 64, 0.9);
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+        padding: 28px;
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-bottom: 1px solid rgba(42, 28, 64, 0.8);
+        padding-bottom: 16px;
+        margin-bottom: 18px;
+      }
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      h1 {
+        font-size: 22px;
+        margin: 0;
+        letter-spacing: 0.6px;
+      }
+
+      .sub {
+        color: var(--muted);
+        font-size: 13px;
+        margin: 0;
+      }
+
+      .badge {
+        font-size: 12px;
+        color: var(--muted);
+        border: 1px solid rgba(142, 45, 226, 0.5);
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(142, 45, 226, 0.08);
+        white-space: nowrap;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 560px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .tile {
+        border: 1px solid rgba(42, 28, 64, 0.9);
+        background: rgba(7, 0, 16, 0.35);
+        border-radius: 14px;
+        padding: 14px;
+      }
+
+      .k {
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.4px;
+        margin: 0 0 8px 0;
+      }
+
+      .v {
+        font-size: 26px;
+        margin: 0;
+      }
+
+      .hint {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+        border-top: 1px dashed rgba(42, 28, 64, 0.8);
+        padding-top: 14px;
+      }
+
+      .accent {
+        color: #d8b6ff;
+      }
+
+      .btnrow {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--text);
+        border: 1px solid rgba(142, 45, 226, 0.7);
+        background: rgba(142, 45, 226, 0.12);
+        padding: 10px 12px;
+        border-radius: 12px;
+        font-size: 13px;
+      }
+
+      .btn:hover {
+        background: rgba(142, 45, 226, 0.18);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="top">
+          <div class="title">
+            <h1>Xoner Command Center</h1>
+            <p class="sub">Private dashboard (placeholder). Next: connect live data.</p>
+          </div>
+          <div class="badge">Status: <span class="accent">Draft</span></div>
+        </div>
+
+        <div class="grid">
+          <div class="tile">
+            <p class="k">App Store Downloads</p>
+            <p class="v">—</p>
+          </div>
+
+          <div class="tile">
+            <p class="k">Play Store Downloads</p>
+            <p class="v">—</p>
+          </div>
+
+          <div class="tile">
+            <p class="k">Registered Users</p>
+            <p class="v">—</p>
+          </div>
+
+          <div class="tile">
+            <p class="k">Swipes / Hour</p>
+            <p class="v">—</p>
+          </div>
+
+          <div class="tile">
+            <p class="k">Likes / Hour</p>
+            <p class="v">—</p>
+          </div>
+
+          <div class="tile">
+            <p class="k">Ratings / Hour</p>
+            <p class="v">—</p>
+          </div>
+        </div>
+
+        <div class="hint">
+          <strong class="accent">Next wiring plan:</strong>
+          We’ll feed these tiles from a small API (later) and keep this page private.
+          <div class="btnrow">
+            <a class="btn" href="/">Back to xonerapp.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
