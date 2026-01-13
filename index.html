@@ -8,13 +8,13 @@
 </head>
 <body>
 
-    <div class="page">
+    <!-- Top Right Nav -->
+    <div class="top-nav">
+        <a href="#about" class="top-link">About</a>
+        <a href="#contact" class="top-link">Contact Us</a>
+    </div>
 
-        <!-- Top Right Nav -->
-        <div class="top-nav">
-            <a href="#about" class="top-link">About</a>
-            <a href="#contact" class="top-link">Contact Us</a>
-        </div>
+    <div class="page">
 
         <div class="hero-content" id="hero">
 
@@ -35,7 +35,7 @@
 
         </div>
 
-        <!-- Hidden sections (so the links work without changing the visible design) -->
+        <!-- Anchors (no visible change) -->
         <div id="about" class="nav-anchor" aria-hidden="true"></div>
         <div id="contact" class="nav-anchor" aria-hidden="true"></div>
 
@@ -50,7 +50,8 @@
             const x = (e.clientX / window.innerWidth - 0.5) * 16;
             const y = (e.clientY / window.innerHeight - 0.5) * 16;
 
-            hero.style.transform = "translateZ(0) rotateX(" + (-y / 2) + "deg) rotateY(" + (x / 2) + "deg)";
+            hero.style.transform =
+                "translateZ(0) rotateX(" + (-y / 2) + "deg) rotateY(" + (x / 2) + "deg)";
             logo.style.transform = "translate(" + (x / 3) + "px," + (y / 3) + "px)";
         });
 
