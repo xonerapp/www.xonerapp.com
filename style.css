@@ -13,7 +13,10 @@ body {
 
     background: radial-gradient(circle at top, #3e1b73 0%, #060012 55%, #000009 100%);
     color: #ffffff;
-    overflow: hidden;
+
+    /* ✅ Allow scrolling on desktop for longer pages (About/Policies) */
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .page {
